@@ -9,6 +9,9 @@ class Square():
 
     def __init__(self, *args, **kwargs):
         """ The constructor. """
+        if 'width' in kwargs and 'height' in kwargs:
+            if kwargs['width'] != kwargs['height']:
+                raise ValueError("width and height must be equal.")
         for key, value in kwargs.items():
             setattr(self, key, value)
 
