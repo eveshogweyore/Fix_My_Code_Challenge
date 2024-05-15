@@ -4,29 +4,31 @@
 
 class square():
     """A square class."""
-    side = 0
-    # height = 0
+    width = 0
+    height = 0
 
     def __init__(self, *args, **kwargs):
         """ The constructor. """
         for key, value in kwargs.items():
             setattr(self, key, value)
 
+        self.height = self.width
+
     def area_of_my_square(self):
         """ Area of the square. """
-        return self.side * self.side
+        return self.width * self.height
 
     def PerimeterOfMySquare(self):
         """ Perimeter of a square. """
-        return 4 * self.side
+        return 4 * self.width
 
     def __str__(self):
         """ String representation of square class. """
-        return "{}/{}".format(self.side, self.side)
+        return "{}/{}".format(self.width, self.height)
 
 
 if __name__ == "__main__":
-    s = square(side=12)
+    s = square(width=12, height=9)
     print(s)
     print(s.area_of_my_square())
     print(s.PerimeterOfMySquare())
